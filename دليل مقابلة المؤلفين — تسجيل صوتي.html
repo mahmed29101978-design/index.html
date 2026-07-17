@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)file:///C:/Users/elnoor/Downloads/%D8%AF%D9%84%D9%8A%D9%84_%D9%85%D9%82%D8%A7%D8%A8%D9%84%D8%A9_%D8%B5%D9%88%D8%AA%D9%8A%20(3).html -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل مقابلة المؤلفين — تسجيل صوتي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./دليل مقابلة المؤلفين — تسجيل صوتي_files/css2" rel="stylesheet">
+<script src="./دليل مقابلة المؤلفين — تسجيل صوتي_files/jszip.min.js.download"></script>
+<style>
+  :root{
+    --bg:#1B2430;
+    --bg-panel:#212B39;
+    --bg-panel-2:#26313F;
+    --gold:#C9A227;
+    --gold-soft:#E4C766;
+    --ink-red:#B5453F;
+    --text:#EDE6D5;
+    --text-dim:#9C9686;
+    --border:rgba(201,162,39,0.22);
+    --serif:'Amiri', 'Georgia', serif;
+    --sans:'Tajawal', 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top, rgba(201,162,39,0.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.7;
+    padding-bottom:120px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+  /* progress bar */
+  .progress-shell{
+    position:sticky;top:0;z-index:20;
+    background:rgba(27,36,48,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .progress-inner{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;}
+  .progress-track{flex:1;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0%;transition:width .4s ease;}
+  .progress-label{font-size:12.5px;color:var(--text-dim);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+  /* header */
+  header{padding:52px 0 30px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:10px;}
+  .eyebrow{font-size:12px;letter-spacing:2px;color:var(--gold-soft);text-transform:uppercase;margin-bottom:14px;}
+  h1{font-family:var(--serif);font-weight:700;font-size:38px;margin:0 0 10px;color:var(--text);}
+  .sub{color:var(--text-dim);font-size:14.5px;max-width:480px;margin:0 auto;}
+
+  /* metadata card */
+  .meta-card{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:24px 26px;
+    margin:30px 0 44px;
+  }
+  .meta-title{font-family:var(--serif);font-size:16px;color:var(--gold-soft);margin-bottom:16px;}
+  .meta-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:560px){.meta-row{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;color:var(--text-dim);margin-bottom:6px;}
+  .field input{
+    width:100%;background:transparent;border:none;
+    border-bottom:1px solid rgba(237,230,213,0.25);
+    color:var(--text);font-family:var(--sans);font-size:15px;
+    padding:6px 2px;outline:none;transition:border-color .2s;
+  }
+  .field input:focus{border-color:var(--gold);}
+  .field input::placeholder{color:rgba(237,230,213,0.3);}
+
+  /* chapters */
+  .chapter{margin-bottom:46px;}
+  .chapter-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  .chapter-num{font-family:var(--serif);font-size:15px;color:var(--gold);white-space:nowrap;}
+  .chapter-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text);}
+
+  .topic{
+    display:flex;gap:16px;align-items:flex-start;
+    padding:18px 0;border-bottom:1px dashed rgba(201,162,39,0.14);
+  }
+  .topic:last-child{border-bottom:none;}
+  .topic-num{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:13px;color:var(--text-dim);margin-top:2px;
+    transition:all .25s ease;
+  }
+  .topic.done .topic-num{border-color:var(--gold);color:var(--gold-soft);background:rgba(201,162,39,0.08);}
+  .topic-body{flex:1;min-width:0;}
+  .topic-text{font-size:15px;color:var(--text);margin-bottom:12px;}
+
+  .rec-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+
+  .rec-btn{
+    flex:none;height:44px;border-radius:24px;padding:0 18px 0 6px;
+    border:1px solid var(--gold);background:var(--gold);cursor:pointer;
+    display:flex;align-items:center;gap:9px;position:relative;
+    transition:background .2s, transform .15s, color .2s;
+    font-family:var(--sans);font-weight:700;font-size:13.5px;color:#22190a;
+  }
+  .rec-btn:hover{background:var(--gold-soft);}
+  .rec-btn:active{transform:scale(0.96);}
+  .rec-btn .icon-shell{
+    width:32px;height:32px;border-radius:50%;background:rgba(34,25,10,0.12);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .rec-btn svg{width:16px;height:16px;display:block;}
+  .rec-btn .mic-icon{fill:#22190a;}
+  .rec-btn .stop-icon{fill:#22190a;display:none;}
+  .rec-btn.recording{background:var(--ink-red);border-color:var(--ink-red);color:#fff;}
+  .rec-btn.recording .icon-shell{background:rgba(255,255,255,0.18);}
+  .rec-btn.recording .mic-icon{display:none;}
+  .rec-btn.recording .stop-icon{display:block;fill:#fff;}
+  .rec-btn.recording::before{
+    content:'';position:absolute;inset:-6px;border-radius:24px;
+    border:1px solid var(--ink-red);opacity:0.6;
+    animation:pulse 1.4s ease-out infinite;
+  }
+  @keyframes pulse{0%{transform:scale(0.97);opacity:.7;}100%{transform:scale(1.08);opacity:0;}}
+
+  .wave{display:flex;align-items:center;gap:2px;height:20px;}
+  .wave span{width:3px;background:var(--gold-soft);border-radius:2px;height:6px;}
+  .rec-btn.recording ~ .wave span{animation:bar 0.9s ease-in-out infinite;}
+  .wave span:nth-child(1){animation-delay:0s;}
+  .wave span:nth-child(2){animation-delay:.15s;}
+  .wave span:nth-child(3){animation-delay:.3s;}
+  .wave span:nth-child(4){animation-delay:.45s;}
+  .wave span:nth-child(5){animation-delay:.6s;}
+  @keyframes bar{0%,100%{height:6px;}50%{height:18px;}}
+
+  .timer{font-size:13px;color:var(--text-dim);font-variant-numeric:tabular-nums;min-width:44px;}
+  .status-tag{font-size:12px;color:var(--text-dim);}
+  .status-tag.ready{color:var(--gold-soft);}
+
+  audio{height:34px;flex:1;min-width:180px;filter:invert(0.88) sepia(0.15) saturate(0.6) hue-rotate(360deg);}
+  .redo{
+    background:none;border:1px solid var(--border);color:var(--text-dim);
+    font-family:var(--sans);font-size:12px;padding:6px 12px;border-radius:20px;cursor:pointer;
+    transition:all .2s;
+  }
+  .redo:hover{border-color:var(--gold);color:var(--gold-soft);}
+
+  .hint{font-size:12px;color:var(--text-dim);margin-top:6px;}
+  .hint.err{color:var(--ink-red);}
+
+  /* footer / export */
+  .footer-bar{
+    position:fixed;bottom:0;left:0;right:0;z-index:30;
+    background:rgba(27,36,48,0.95);backdrop-filter:blur(8px);
+    border-top:1px solid var(--border);
+    padding:14px 20px;
+  }
+  .footer-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .footer-count{font-size:13px;color:var(--text-dim);}
+  .footer-count b{color:var(--gold-soft);font-weight:600;}
+  .export-btn{
+    background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+    border:none;color:#22190a;font-family:var(--sans);font-weight:700;
+    font-size:14px;padding:12px 26px;border-radius:30px;cursor:pointer;
+    transition:transform .15s, box-shadow .2s;
+  }
+  .export-btn:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(201,162,39,0.35);}
+  .export-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none;}
+  .export-btn.busy{opacity:.7;}
+</style>
+</head>
+<body>
+
+<div class="progress-shell">
+  <div class="progress-inner">
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width: 0%;"></div></div>
+    <div class="progress-label" id="progressLabel">٠ من ٢٥</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">استمارة تسجيل صوتي</div>
+    <h1>دليل مقابلة المؤلفين</h1>
+    <p class="sub">اضغط زر التسجيل عند كل سؤال وأجب بصوتك مباشرة. لا حاجة للكتابة — يمكنك الاستماع لإجابتك وإعادة التسجيل قبل الإرسال.</p>
+  </header>
+
+  <div class="meta-card">
+    <div class="meta-title">بيانات أساسية</div>
+    <div class="meta-row">
+      <div class="field"><label>اسم المؤلف</label><input type="text" id="metaName" placeholder="الاسم بالكامل"></div>
+      <div class="field"><label>التاريخ</label><input type="date" id="metaDate"></div>
+      <div class="field"><label>المجال المعرفي / التخصص</label><input type="text" id="metaField" placeholder="مثال: الرواية، الفكر، الترجمة..."></div>
+      <div class="field"><label>القائم بالمقابلة</label><input type="text" id="metaInterviewer" placeholder="اسم الباحث"></div>
+    </div>
+  </div>
+
+  <div id="chapters"><div class="chapter">
+    <div class="chapter-head">
+      <span class="chapter-num">الفصل الأول</span>
+      <span class="chapter-title">التعريف بالمؤلف</span>
+    </div>
+  <div class="topic" id="topic-s0t0">
+      <div class="topic-num">١</div>
+      <div class="topic-body">
+        <div class="topic-text">المجال المعرفي الذي تكتب فيه، وأسباب اختيارك له.</div>
+        <div class="rec-row" id="row-s0t0">
+          <button class="rec-btn" id="btn-s0t0" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t0">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t0">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t0">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t0"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t1">
+      <div class="topic-num">٢</div>
+      <div class="topic-body">
+        <div class="topic-text">بدايات الكتابة في مجالك، ودوافع الاستمرار.</div>
+        <div class="rec-row" id="row-s0t1">
+          <button class="rec-btn" id="btn-s0t1" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t1">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t1">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t1">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t1"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t2">
+      <div class="topic-num">٣</div>
+      <div class="topic-body">
+        <div class="topic-text">أهم الأفراد أو المؤسسات التي رعت نشاطك الفكري بشكل عام: دور الأسرة في تشجيعك على الكتابة سواء في الطفولة أو الشباب، ودور المدرسة أو الجامعة في تطوير مهاراتك، وتقييمك لهذا الدور.</div>
+        <div class="rec-row" id="row-s0t2">
+          <button class="rec-btn" id="btn-s0t2" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t2">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t2">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t2">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t2"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t3">
+      <div class="topic-num">٤</div>
+      <div class="topic-body">
+        <div class="topic-text">أهم المؤلفات التي أنجزتها.</div>
+        <div class="rec-row" id="row-s0t3">
+          <button class="rec-btn" id="btn-s0t3" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t3">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t3">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t3">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t3"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t4">
+      <div class="topic-num">٥</div>
+      <div class="topic-body">
+        <div class="topic-text">دور النشر التي تعاونت معها.</div>
+        <div class="rec-row" id="row-s0t4">
+          <button class="rec-btn" id="btn-s0t4" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t4">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t4">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t4">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t4"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t5">
+      <div class="topic-num">٦</div>
+      <div class="topic-body">
+        <div class="topic-text">مشروعاتك الحالية في الكتابة.</div>
+        <div class="rec-row" id="row-s0t5">
+          <button class="rec-btn" id="btn-s0t5" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t5">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t5">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t5">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t5"></div>
+      </div>
+    </div><div class="topic" id="topic-s0t6">
+      <div class="topic-num">٧</div>
+      <div class="topic-body">
+        <div class="topic-text">أهم الإنجازات التي حققتها في مسيرتك.</div>
+        <div class="rec-row" id="row-s0t6">
+          <button class="rec-btn" id="btn-s0t6" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s0t6">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s0t6">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s0t6">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s0t6"></div>
+      </div>
+    </div></div><div class="chapter">
+    <div class="chapter-head">
+      <span class="chapter-num">الفصل الثاني</span>
+      <span class="chapter-title">جماعة المؤلفين: التكوين وآليات الدعم والتفاعل</span>
+    </div>
+  <div class="topic" id="topic-s1t0">
+      <div class="topic-num">١</div>
+      <div class="topic-body">
+        <div class="topic-text">الاتجاهات والمدارس الفكرية البارزة في مجالك، وطبيعة التفاعل بينها، وأثرها في حركة النشر.</div>
+        <div class="rec-row" id="row-s1t0">
+          <button class="rec-btn" id="btn-s1t0" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t0">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t0">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t0">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t0"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t1">
+      <div class="topic-num">٢</div>
+      <div class="topic-body">
+        <div class="topic-text">العلاقة بين الأجيال المختلفة من المؤلفين: مدى وجود انقسام جيلي من عدمه وأسبابه، وتأثيره على حركة النشر.</div>
+        <div class="rec-row" id="row-s1t1">
+          <button class="rec-btn" id="btn-s1t1" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t1">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t1">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t1">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t1"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t2">
+      <div class="topic-num">٣</div>
+      <div class="topic-body">
+        <div class="topic-text">طبيعة العلاقات المهنية والاجتماعية بين المؤلفين، وطرق التواصل بينهم: الأنشطة والتفاعلات المشتركة، وأماكن إقامتها، والمؤسسات الراعية لها.</div>
+        <div class="rec-row" id="row-s1t2">
+          <button class="rec-btn" id="btn-s1t2" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t2">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t2">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t2">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t2"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t3">
+      <div class="topic-num">٤</div>
+      <div class="topic-body">
+        <div class="topic-text">الموقف من الجوائز المقدمة للمؤلفين في مجال اهتمامك، سواء من الدولة أو مؤسسات خاصة أو دولية: الهدف منها، ودورها في الحياة الثقافية، وأهميتها بالنسبة لك ولغيرك من المؤلفين.</div>
+        <div class="rec-row" id="row-s1t3">
+          <button class="rec-btn" id="btn-s1t3" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t3">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t3">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t3">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t3"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t4">
+      <div class="topic-num">٥</div>
+      <div class="topic-body">
+        <div class="topic-text">الموقف من المؤسسات الداعمة للمؤلفين: دور اتحاد الكتّاب والمؤسسات المعنية بدعم المؤلفين، أو أي مؤسسة أخرى ذات صلة بالمجال.</div>
+        <div class="rec-row" id="row-s1t4">
+          <button class="rec-btn" id="btn-s1t4" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t4">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t4">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t4">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t4"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t5">
+      <div class="topic-num">٦</div>
+      <div class="topic-body">
+        <div class="topic-text">مدى إقامة مؤتمرات أو فاعليات في مجال تخصصك، وموقفك منها من حيث الغاية منها، ودرجة أهميتها، ومدى الحاجة لاستمرارها.</div>
+        <div class="rec-row" id="row-s1t5">
+          <button class="rec-btn" id="btn-s1t5" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t5">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t5">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t5">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t5"></div>
+      </div>
+    </div><div class="topic" id="topic-s1t6">
+      <div class="topic-num">٧</div>
+      <div class="topic-body">
+        <div class="topic-text">الموقف من القراء: نوعية قرائك، وكيفية معرفة ردود أفعالهم، ومدى تأثيرها في كتاباتك.</div>
+        <div class="rec-row" id="row-s1t6">
+          <button class="rec-btn" id="btn-s1t6" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s1t6">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s1t6">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s1t6">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s1t6"></div>
+      </div>
+    </div></div><div class="chapter">
+    <div class="chapter-head">
+      <span class="chapter-num">الفصل الثالث</span>
+      <span class="chapter-title">تجربة النشر</span>
+    </div>
+  <div class="topic" id="topic-s2t0">
+      <div class="topic-num">١</div>
+      <div class="topic-body">
+        <div class="topic-text">التعريف بأول تجربة نشر لك من مختلف جوانبها.</div>
+        <div class="rec-row" id="row-s2t0">
+          <button class="rec-btn" id="btn-s2t0" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s2t0">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s2t0">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s2t0">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s2t0"></div>
+      </div>
+    </div><div class="topic" id="topic-s2t1">
+      <div class="topic-num">٢</div>
+      <div class="topic-body">
+        <div class="topic-text">صور التعاقد التي لجأت إليها في تعاملك مع دور النشر، وتقييمك لمدى عدالتها.</div>
+        <div class="rec-row" id="row-s2t1">
+          <button class="rec-btn" id="btn-s2t1" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s2t1">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s2t1">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s2t1">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s2t1"></div>
+      </div>
+    </div><div class="topic" id="topic-s2t2">
+      <div class="topic-num">٣</div>
+      <div class="topic-body">
+        <div class="topic-text">النسب أو الأجور التي يحصل عليها المؤلفون أو المترجمون من دور النشر، ومدى عدالتها، وفترات الحصول عليها (دفعة واحدة، على دفعات، إلخ).</div>
+        <div class="rec-row" id="row-s2t2">
+          <button class="rec-btn" id="btn-s2t2" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s2t2">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s2t2">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s2t2">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s2t2"></div>
+      </div>
+    </div><div class="topic" id="topic-s2t3">
+      <div class="topic-num">٤</div>
+      <div class="topic-body">
+        <div class="topic-text">الخطوات المتبعة داخل دور النشر التي تعاملت معها، ومدى تقييمك لها وما إذا كانت أفادتك أثناء عملية النشر: تقييم جدوى نشر العمل، والتحرير والمراجعة اللغوية، وطرق الدعاية والتوزيع وفاعليتها.</div>
+        <div class="rec-row" id="row-s2t3">
+          <button class="rec-btn" id="btn-s2t3" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s2t3">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s2t3">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s2t3">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s2t3"></div>
+      </div>
+    </div><div class="topic" id="topic-s2t4">
+      <div class="topic-num">٥</div>
+      <div class="topic-body">
+        <div class="topic-text">مدى استعانة دور النشر عمومًا بمحررين ومستشارين في أعمالها، وآليات اختيارهم، ودورهم في حركة النشر، ودرجة الرضا عن عملهم بين المؤلفين.</div>
+        <div class="rec-row" id="row-s2t4">
+          <button class="rec-btn" id="btn-s2t4" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s2t4">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s2t4">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s2t4">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s2t4"></div>
+      </div>
+    </div></div><div class="chapter">
+    <div class="chapter-head">
+      <span class="chapter-num">الفصل الرابع</span>
+      <span class="chapter-title">حركة نشر الكتب ومستقبلها</span>
+    </div>
+  <div class="topic" id="topic-s3t0">
+      <div class="topic-num">١</div>
+      <div class="topic-body">
+        <div class="topic-text">تقييمك لواقع حركة نشر الكتب، وأهم مشكلاتها الفعلية بالنسبة للمؤلفين أنفسهم، ودور النشر، والجمهور.</div>
+        <div class="rec-row" id="row-s3t0">
+          <button class="rec-btn" id="btn-s3t0" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t0">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t0">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t0">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t0"></div>
+      </div>
+    </div><div class="topic" id="topic-s3t1">
+      <div class="topic-num">٢</div>
+      <div class="topic-body">
+        <div class="topic-text">موقفك من النشر الإلكتروني: خصائصه، مزاياه، عيوبه وتحدياته.</div>
+        <div class="rec-row" id="row-s3t1">
+          <button class="rec-btn" id="btn-s3t1" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t1">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t1">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t1">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t1"></div>
+      </div>
+    </div><div class="topic" id="topic-s3t2">
+      <div class="topic-num">٣</div>
+      <div class="topic-body">
+        <div class="topic-text">مدى اعتبار النشر الإلكتروني حلًا لمشكلات النشر الورقي، ومن المستفيد والمتضرر منه.</div>
+        <div class="rec-row" id="row-s3t2">
+          <button class="rec-btn" id="btn-s3t2" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t2">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t2">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t2">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t2"></div>
+      </div>
+    </div><div class="topic" id="topic-s3t3">
+      <div class="topic-num">٤</div>
+      <div class="topic-body">
+        <div class="topic-text">موقفك من القرصنة الإلكترونية، وآليات مواجهتها.</div>
+        <div class="rec-row" id="row-s3t3">
+          <button class="rec-btn" id="btn-s3t3" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t3">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t3">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t3">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t3"></div>
+      </div>
+    </div><div class="topic" id="topic-s3t4">
+      <div class="topic-num">٥</div>
+      <div class="topic-body">
+        <div class="topic-text">مقترحاتك لتطوير حركة النشر وتوجيهها في المسار الصحيح.</div>
+        <div class="rec-row" id="row-s3t4">
+          <button class="rec-btn" id="btn-s3t4" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t4">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t4">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t4">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t4"></div>
+      </div>
+    </div><div class="topic" id="topic-s3t5">
+      <div class="topic-num">٦</div>
+      <div class="topic-body">
+        <div class="topic-text">السيناريوهات المتوقعة لحركة النشر الورقي في المستقبل: السيناريو المتفائل، والمتشائم، والمرجح.</div>
+        <div class="rec-row" id="row-s3t5">
+          <button class="rec-btn" id="btn-s3t5" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-s3t5">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-s3t5">٠٠:٠٠</span>
+          <span class="status-tag" id="status-s3t5">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-s3t5"></div>
+      </div>
+    </div></div></div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-inner">
+    <div class="footer-count" id="footerCount">لم يتم تسجيل أي إجابة بعد</div>
+    <button class="export-btn" id="exportBtn" disabled="">تنزيل كل التسجيلات (ملف مضغوط)</button>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  { title: "التعريف بالمؤلف", topics: [
+    "المجال المعرفي الذي تكتب فيه، وأسباب اختيارك له.",
+    "بدايات الكتابة في مجالك، ودوافع الاستمرار.",
+    "أهم الأفراد أو المؤسسات التي رعت نشاطك الفكري بشكل عام: دور الأسرة في تشجيعك على الكتابة سواء في الطفولة أو الشباب، ودور المدرسة أو الجامعة في تطوير مهاراتك، وتقييمك لهذا الدور.",
+    "أهم المؤلفات التي أنجزتها.",
+    "دور النشر التي تعاونت معها.",
+    "مشروعاتك الحالية في الكتابة.",
+    "أهم الإنجازات التي حققتها في مسيرتك."
+  ]},
+  { title: "جماعة المؤلفين: التكوين وآليات الدعم والتفاعل", topics: [
+    "الاتجاهات والمدارس الفكرية البارزة في مجالك، وطبيعة التفاعل بينها، وأثرها في حركة النشر.",
+    "العلاقة بين الأجيال المختلفة من المؤلفين: مدى وجود انقسام جيلي من عدمه وأسبابه، وتأثيره على حركة النشر.",
+    "طبيعة العلاقات المهنية والاجتماعية بين المؤلفين، وطرق التواصل بينهم: الأنشطة والتفاعلات المشتركة، وأماكن إقامتها، والمؤسسات الراعية لها.",
+    "الموقف من الجوائز المقدمة للمؤلفين في مجال اهتمامك، سواء من الدولة أو مؤسسات خاصة أو دولية: الهدف منها، ودورها في الحياة الثقافية، وأهميتها بالنسبة لك ولغيرك من المؤلفين.",
+    "الموقف من المؤسسات الداعمة للمؤلفين: دور اتحاد الكتّاب والمؤسسات المعنية بدعم المؤلفين، أو أي مؤسسة أخرى ذات صلة بالمجال.",
+    "مدى إقامة مؤتمرات أو فاعليات في مجال تخصصك، وموقفك منها من حيث الغاية منها، ودرجة أهميتها، ومدى الحاجة لاستمرارها.",
+    "الموقف من القراء: نوعية قرائك، وكيفية معرفة ردود أفعالهم، ومدى تأثيرها في كتاباتك."
+  ]},
+  { title: "تجربة النشر", topics: [
+    "التعريف بأول تجربة نشر لك من مختلف جوانبها.",
+    "صور التعاقد التي لجأت إليها في تعاملك مع دور النشر، وتقييمك لمدى عدالتها.",
+    "النسب أو الأجور التي يحصل عليها المؤلفون أو المترجمون من دور النشر، ومدى عدالتها، وفترات الحصول عليها (دفعة واحدة، على دفعات، إلخ).",
+    "الخطوات المتبعة داخل دور النشر التي تعاملت معها، ومدى تقييمك لها وما إذا كانت أفادتك أثناء عملية النشر: تقييم جدوى نشر العمل، والتحرير والمراجعة اللغوية، وطرق الدعاية والتوزيع وفاعليتها.",
+    "مدى استعانة دور النشر عمومًا بمحررين ومستشارين في أعمالها، وآليات اختيارهم، ودورهم في حركة النشر، ودرجة الرضا عن عملهم بين المؤلفين."
+  ]},
+  { title: "حركة نشر الكتب ومستقبلها", topics: [
+    "تقييمك لواقع حركة نشر الكتب، وأهم مشكلاتها الفعلية بالنسبة للمؤلفين أنفسهم، ودور النشر، والجمهور.",
+    "موقفك من النشر الإلكتروني: خصائصه، مزاياه، عيوبه وتحدياته.",
+    "مدى اعتبار النشر الإلكتروني حلًا لمشكلات النشر الورقي، ومن المستفيد والمتضرر منه.",
+    "موقفك من القرصنة الإلكترونية، وآليات مواجهتها.",
+    "مقترحاتك لتطوير حركة النشر وتوجيهها في المسار الصحيح.",
+    "السيناريوهات المتوقعة لحركة النشر الورقي في المستقبل: السيناريو المتفائل، والمتشائم، والمرجح."
+  ]}
+];
+
+const arabicOrdinals = ["الأول","الثاني","الثالث","الرابع","الخامس","السادس"];
+const arabicDigits = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+function toArabicNum(n){ return String(n).split('').map(d=>arabicDigits[+d]).join(''); }
+
+const chaptersEl = document.getElementById('chapters');
+const recordings = {}; // id -> {blob, mime, sectionTitle, topicText, sIdx, tIdx}
+let totalTopics = 0;
+let mediaStream = null;
+
+DATA.forEach((section, sIdx) => {
+  totalTopics += section.topics.length;
+  const chap = document.createElement('div');
+  chap.className = 'chapter';
+  chap.innerHTML = `
+    <div class="chapter-head">
+      <span class="chapter-num">الفصل ${arabicOrdinals[sIdx] || (sIdx+1)}</span>
+      <span class="chapter-title">${section.title}</span>
+    </div>
+  `;
+  chaptersEl.appendChild(chap); // attach immediately so getElementById lookups below can find nested nodes
+  section.topics.forEach((text, tIdx) => {
+    const id = `s${sIdx}t${tIdx}`;
+    const topic = document.createElement('div');
+    topic.className = 'topic';
+    topic.id = `topic-${id}`;
+    topic.innerHTML = `
+      <div class="topic-num">${toArabicNum(tIdx+1)}</div>
+      <div class="topic-body">
+        <div class="topic-text">${text}</div>
+        <div class="rec-row" id="row-${id}">
+          <button class="rec-btn" id="btn-${id}" title="بدء التسجيل">
+            <span class="icon-shell">
+              <svg class="mic-icon" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+              <svg class="stop-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+            </span>
+            <span class="btn-label">تسجيل</span>
+          </button>
+          <div class="wave" id="wave-${id}">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="timer" id="timer-${id}">٠٠:٠٠</span>
+          <span class="status-tag" id="status-${id}">لم يُسجَّل بعد</span>
+        </div>
+        <div class="hint" id="hint-${id}"></div>
+      </div>
+    `;
+    chap.appendChild(topic);
+    setupRecorder(id, sIdx, tIdx, text, section.title);
+  });
+});
+
+updateFooter();
+
+function fmtTime(sec){
+  const m = String(Math.floor(sec/60)).padStart(2,'0');
+  const s = String(sec%60).padStart(2,'0');
+  return m+':'+s;
+}
+
+async function getStream(){
+  if(mediaStream) return mediaStream;
+  mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  return mediaStream;
+}
+
+function setupRecorder(id, sIdx, tIdx, text, sectionTitle){
+  const btn = document.getElementById(`btn-${id}`);
+  const timerEl = document.getElementById(`timer-${id}`);
+  const statusEl = document.getElementById(`status-${id}`);
+  const hintEl = document.getElementById(`hint-${id}`);
+  const rowEl = document.getElementById(`row-${id}`);
+  const topicEl = document.getElementById(`topic-${id}`);
+
+  let recorder = null;
+  let chunks = [];
+  let timerInterval = null;
+  let seconds = 0;
+  let recording = false;
+
+  btn.addEventListener('click', async () => {
+    if(!recording){
+      hintEl.textContent = '';
+      hintEl.classList.remove('err');
+      try{
+        const stream = await getStream();
+        const mime = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' :
+                     (MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : '');
+        recorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+        chunks = [];
+        recorder.ondataavailable = e => { if(e.data.size>0) chunks.push(e.data); };
+        recorder.onstop = () => {
+          const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+          recordings[id] = { blob, mime: recorder.mimeType || 'audio/webm', sectionTitle, topicText: text, sIdx, tIdx };
+          renderPlayer(id, blob);
+          topicEl.classList.add('done');
+          statusEl.textContent = 'تم التسجيل';
+          statusEl.classList.add('ready');
+          updateFooter();
+        };
+        recorder.start();
+        recording = true;
+        seconds = 0;
+        timerEl.textContent = fmtTime(0);
+        btn.classList.add('recording');
+        btn.title = 'إيقاف التسجيل';
+        btn.querySelector('.btn-label').textContent = 'إيقاف';
+        statusEl.textContent = 'جارٍ التسجيل...';
+        timerInterval = setInterval(() => {
+          seconds++;
+          timerEl.textContent = fmtTime(seconds);
+        }, 1000);
+      }catch(err){
+        hintEl.textContent = 'تعذّر الوصول إلى الميكروفون. تأكد من السماح للمتصفح باستخدامه ثم أعد المحاولة.';
+        hintEl.classList.add('err');
+      }
+    } else {
+      recorder.stop();
+      recording = false;
+      btn.classList.remove('recording');
+      btn.title = 'بدء التسجيل';
+      btn.querySelector('.btn-label').textContent = 'تسجيل';
+      clearInterval(timerInterval);
+    }
+  });
+
+  function renderPlayer(id, blob){
+    const url = URL.createObjectURL(blob);
+    let player = rowEl.querySelector('audio');
+    if(!player){
+      player = document.createElement('audio');
+      player.controls = true;
+      rowEl.appendChild(player);
+    }
+    player.src = url;
+
+    let redo = rowEl.querySelector('.redo');
+    if(!redo){
+      redo = document.createElement('button');
+      redo.className = 'redo';
+      redo.textContent = 'إعادة التسجيل';
+      redo.addEventListener('click', () => btn.click());
+      rowEl.appendChild(redo);
+    }
+  }
+}
+
+function updateFooter(){
+  const done = Object.keys(recordings).length;
+  document.getElementById('progressFill').style.width = (totalTopics ? (done/totalTopics*100) : 0) + '%';
+  document.getElementById('progressLabel').textContent = `${toArabicNum(done)} من ${toArabicNum(totalTopics)}`;
+  document.getElementById('footerCount').innerHTML = done === 0
+    ? 'لم يتم تسجيل أي إجابة بعد'
+    : `تم تسجيل <b>${toArabicNum(done)}</b> من ${toArabicNum(totalTopics)} إجابة`;
+  document.getElementById('exportBtn').disabled = done === 0;
+}
+
+document.getElementById('exportBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('exportBtn');
+  btn.disabled = true;
+  btn.classList.add('busy');
+  btn.textContent = 'جارٍ التجهيز...';
+
+  const zip = new JSZip();
+  const name = document.getElementById('metaName').value.trim() || 'بدون_اسم';
+  const date = document.getElementById('metaDate').value || '';
+  const field = document.getElementById('metaField').value.trim() || '';
+  const interviewer = document.getElementById('metaInterviewer').value.trim() || '';
+
+  let readme = `دليل مقابلة المؤلفين — تسجيلات صوتية\n`;
+  readme += `اسم المؤلف: ${name}\n`;
+  readme += `التاريخ: ${date}\n`;
+  readme += `المجال: ${field}\n`;
+  readme += `القائم بالمقابلة: ${interviewer}\n\n`;
+  readme += `فهرس الملفات:\n`;
+  readme += `----------------\n`;
+
+  const sorted = Object.values(recordings).sort((a,b) => a.sIdx - b.sIdx || a.tIdx - b.tIdx);
+  sorted.forEach(rec => {
+    const ext = rec.mime.includes('mp4') ? 'm4a' : 'webm';
+    const fname = `فصل_${rec.sIdx+1}_سؤال_${rec.tIdx+1}.${ext}`;
+    zip.file(fname, rec.blob);
+    readme += `\n[${fname}]\nالمحور: ${rec.sectionTitle}\nالسؤال: ${rec.topicText}\n`;
+  });
+
+  zip.file('بيانات_المقابلة.txt', readme);
+
+  const content = await zip.generateAsync({ type: 'blob' });
+  const url = URL.createObjectURL(content);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `مقابلة_${name.replace(/\s+/g,'_')}.zip`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  btn.classList.remove('busy');
+  btn.disabled = false;
+  btn.textContent = 'تنزيل كل التسجيلات (ملف مضغوط)';
+});
+</script>
+
+
+
+</body></html>
